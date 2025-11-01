@@ -60,5 +60,15 @@ def receive_data():
 
 # --- Inicia el servidor (SOLO PARA PRUEBAS LOCALES) ---
 # El servidor de producción (Render) no usará esta parte.
+# --- RUTA SECRETA PARA VER LOS DATOS ---
+# Cambia "ver-datos-secretos-123" por algo que solo tú sepas
+@app.route('/del0s')
+def ver_datos():
+    # 1. Consulta la base de datos y pide TODOS los registros de la tabla Logins
+    todos_los_logins = Logins.query.all()
+
+    # 2. Muestra la página 'admin.html' y envíale la lista de datos
+    return render_template('admin.html', todos_los_logins=todos_los_logins)
+
 if __name__ == '__main__':
     app.run(debug=True)

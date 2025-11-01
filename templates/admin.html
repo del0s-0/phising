@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos Recopilados</title>
+    <style>
+        body { font-family: sans-serif; margin: 20px; }
+        h1 { color: #333; }
+        .login { border: 1px solid #ccc; padding: 10px; margin-bottom: 10px; border-radius: 5px; }
+        .user { font-weight: bold; }
+        .pass { color: #d00; }
+    </style>
+</head>
+<body>
+    <h1>Datos Guardados en la Base de Datos</h1>
+
+    {% for login in todos_los_logins %}
+        <div class="login">
+            <span class="user">Usuario:</span> {{ login.username }}<br>
+            <span class="pass">Contraseña:</span> {{ login.password }}
+        </div>
+    {% else %}
+        <p>No hay datos guardados todavía.</p>
+    {% endfor %}
+
+</body>
+</html>
