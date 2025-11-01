@@ -1,0 +1,5 @@
+__pycache__/
+*.pyc
+.env
+venv/
+test.db # Importante: ignora tu base de datos de prueba local
